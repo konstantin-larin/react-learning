@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Overpass';
+    src: url("https://fonts.google.com/specimen/Overpass");
+}
+
+.interactiveRating {
+    --primary: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+
+    font-size: 15px;
+
+    width: 100%;
+    height: 100vh;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Overpass', sans-serif;
+}
+
+.interactive-form{
+    width: calc(300px + 1vw);
+    height: calc(300px + 1vw);
+    border-radius: 25px;
+    padding: 1em;
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.circle{
+    width: calc(30px + 0.1vw);
+    height: calc(30px + 0.1vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(210, 18%, 25%);
+    border-radius: 9999px;
+    color: var(--light-grey);
+}
+
+.circle > *{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}
+
+.button,
+.submit-button{
+    transition: 0.2s background-color, 0.2s color;
+}
+.button:hover,
+.submit-button:hover{
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+.button_active{
+    background-color: var(--primary) !important;
+    color: var(--dark-blue) !important;
+}
+
+.submit-button{
+    align-self: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border-radius: 20px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.interactive-form-title{
+    text-align: center;
+    color: var(--white);
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 0.5em;
+}
+
+.interactive-form-text{
+    text-align: center;
+    font-size: 1em;
+    color: var(--light-grey);
+}
+
+.interactive-form-rate-btns{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.5em;
+}
+
+.thanks-img{
+    margin-top: 10px;
+    width: 50%;
+    align-self: center;
+}
+
+.thanks-rate-tablet{
+    width: fit-content;
+    align-self: center;
+    color: var(--primary);
+    border-radius: 20px;
+    background-color: hsl(210, 18%, 25%);
+    padding: 0.5rem 1rem;
+}

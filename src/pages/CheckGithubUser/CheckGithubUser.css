@@ -1,0 +1,119 @@
+.container *::-webkit-scrollbar {
+    width: 5px; /* Ширина всего элемента навигации */
+}
+
+.container *::-webkit-scrollbar-track {
+    background: transparent; /* Цвет дорожки */
+}
+
+.container *::-webkit-scrollbar-thumb {
+    background-color: white; /* Цвет бегунка */
+    border-radius: 20px; /* Округление бегунка */
+    border: 3px solid white; /* Оформление границ бегунка */
+}
+
+.container{
+    background-color: #242424;
+    color: #f9f9f9;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.title{
+    margin-top: 2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 0.2em;
+}
+
+.user-name-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.user-name-field label{
+    font-size: 1.4rem;
+}
+
+.user-name-field input{
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    color: white;
+    font-size: 1.2rem;
+}
+.user-name-field button{
+    border: 2px solid white;
+    padding: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+}
+.user-name-field button svg{
+    position: relative;
+    left: 0.1rem;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.profile{
+    flex-grow: 1;
+    height: 1px;
+    overflow-y: auto;
+    width: 30rem;
+}
+
+.profile-photo{
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 9999px;
+}
+.profile-photo img{
+    border-radius: 9999px;
+}
+
+.profile-title{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.profile-param{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.profile-param-description{
+    text-indent: 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
