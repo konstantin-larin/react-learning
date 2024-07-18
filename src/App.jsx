@@ -13,7 +13,7 @@ const Pages = {
 export default function App() {
     const [page, setPage] = useState("Start");
     if (page === "Start") {
-        return <Start setPage={setPage}></Start>
+        return <>Привет</>
     }
     const Page = Pages[page];
     return <Page></Page>
