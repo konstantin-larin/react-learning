@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 
+// eslint-disable-next-line react/prop-types
 export default function GithubUserProfile({login = ""}) {
     const [info, setInfo] = useState(null);
     const [error, setError] = useState(null);
