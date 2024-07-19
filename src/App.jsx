@@ -1,20 +1,17 @@
 import './App.css';
-import {useState} from "react";
-import CheckGithubUser from "./pages/CheckGithubUser/CheckGithubUser.jsx";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Start from "./Start.jsx";
 import InteractiveRating from "./pages/InteractiveRating/InteractiveRating.jsx";
-import Start from "./pages/Start/Start.jsx";
+import CheckGithubUser from "./pages/CheckGithubUser/CheckGithubUser.jsx";
 
-const Pages = {
-    Start,
-    CheckGithubUser,
-    InteractiveRating
-}
-
-export default function App() {
-    const [page, setPage] = useState("Start");
-    if (page === "Start") {
-        return <Start setPage={setPage}></Start>
-    }
-    const Page = Pages[page];
-    return <Page></Page>
+export default function App(){
+    return (
+        <BrowserRouter basename={"/react-learning"}>
+            <Routes>
+                <Route element={<Start />} path={"/"}></Route>
+                <Route element={<InteractiveRating />} path={"/pages/InteractiveRating/"}></Route>
+                <Route element={<CheckGithubUser />} path={"/pages/CheckGithubUser/"}></Route>
+            </Routes>
+        </BrowserRouter>
+    )
 }
