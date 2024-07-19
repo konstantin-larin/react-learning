@@ -18,4 +18,3 @@ export default function App() {
     const Page = Pages[page];
     return <Page></Page>
 }
-

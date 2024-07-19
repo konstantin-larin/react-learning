@@ -1,28 +1,25 @@
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
-// eslint-disable-next-line react/prop-types
 export default function GithubUserProfile({login = ""}) {
     const [info, setInfo] = useState(null);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        fetch("https://api.github.com/users/" + login)
-            .then(response => {
-                if (response.ok) {
-                    response.json().then(data => {
-                        setInfo(data);
-                        setError(null);
-                    });
-                } else {
-                    setInfo(null);
-                    setError("Error " + response.status);
-                }
-            });
-
-        return () => {
-
+    const fetchData = useCallback(async() => {
+        const response = await fetch("https://api.github.com/users/" + login);
+        if(response.ok){
+            const data = await response.json();
+            setInfo(data);
+            setError(null);
+        } else {
+            setInfo(null);
+            setError("Error " + response.status);
         }
     }, [login]);
+
+    useEffect(() => {
+        fetchData();
+        return () => {}
+    }, [fetchData]);
 
     if (info) {
         return (

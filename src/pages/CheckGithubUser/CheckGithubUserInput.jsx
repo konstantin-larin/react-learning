@@ -1,16 +1,19 @@
+import {useRef} from "react";
+
 export default function CheckGithubUserInput({login, setLogin}) {
+    const loginInput = useRef(null);
     function onKeyDown(e){
         if(e.code === 'Enter'){
-            setLogin(e.target.value);
+            setLogin(loginInput.current.value);
         }
     }
     function onClick(){
-        setLogin(document.getElementById("user-name").value);
+        setLogin(loginInput.current.value);
     }
     return (
         <div className={"user-name-field"}>
             <label htmlFor="user-name">Enter user's login:</label>
-            <input type="text" id="user-name" defaultValue={login} onKeyDown={onKeyDown} />
+            <input type="text" id="user-name" ref={loginInput} defaultValue={login} onKeyDown={onKeyDown} />
 
             <button onClick={onClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
